@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let words = ["BlackPink", "Treasure", "Blink", "Teume"];
+        let randomword = words[Math.floor(Math.random()*words.length)];
+        let answerArray = [];
+        
+        for ( let i = 0; i < randomword.length; i++) {
+                 answerArray[i] = "_";
+        }
+        
+        let remainletters = randomword.length;
+            while (remainletters > 0) {
+            alert(answerArray.join(" "));
+        
+        let guess = prompt("Vui lòng bấm từ, bấm Cancel nếu muốn thoát trò chơi!")
+       
+        if (guess === null) { break;
+        } else if (guess.length != 1) {
+            alert("Vui lòng đoán từ ");
+          } else {
+                   for (let j = 0; j < randomword.length; j++) {
+                           if (word[j] === guess) {
+                               answerArray[j] = guess;
+                            remainletters--;
+                            }
+                        }
+                }
+        }
+        alert(answerArray.join(" "));
+        alert(randomword + " là từ chính xác! Xin chúc mừng bạn!");
+        </script>
+</body>
+</html>
