@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,20 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="congrate"></p>
     <script>
-        let words = ["BlackPink", "Treasure", "Blink", "Teume"];
+        let words = ["blackpink", "treasure", "blink", "teume"];
         let randomword = words[Math.floor(Math.random()*words.length)];
+        alert("Chào mừng đến với trò chơi Đoán Từ !  Sau đây là từ dành cho bạn: ")
         let answerArray = [];
         
         for ( let i = 0; i < randomword.length; i++) {
-                 answerArray[i] = "_";
+                 answerArray[i] = "_ ";
         }
         
         let remainletters = randomword.length;
             while (remainletters > 0) {
             alert(answerArray.join(" "));
         
-        let guess = prompt("Vui lòng bấm từ, bấm Cancel nếu muốn thoát trò chơi!")
+        let guess = prompt("Vui lòng nhập một chữ cái!")
        
         if (guess === null) { break;
         } else if (guess.length != 1) {
@@ -34,7 +36,9 @@
                 }
         }
         alert(answerArray.join(" "));
-        alert(randomword + " là từ chính xác! Xin chúc mừng bạn!");
+        
+        document.getElementById("congrate").innerHTML = randomword + " là từ chính xác! Xin chúc mừng bạn!!!"
         </script>
+        
 </body>
 </html>
